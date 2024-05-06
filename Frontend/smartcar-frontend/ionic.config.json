@@ -1,0 +1,7 @@
+{
+  "name": "smartcar-frontend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue-vite"
+}
