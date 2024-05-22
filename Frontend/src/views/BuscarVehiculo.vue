@@ -1,5 +1,5 @@
 <template>
-    <div class="search-box">
+<    <div class="search-box">
       <div class="section">
         <div class="label">Nombre:</div>
         <input type="text" v-model="nombre" placeholder="Nombre del vehículo">
@@ -69,9 +69,11 @@
       </div>
       <button @click="guardar" class="guardar-button">Guardar</button>
     </div>
-  </template>
+>  </template>
   
   <script>
+    import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+
   export default {
     data() {
       return {

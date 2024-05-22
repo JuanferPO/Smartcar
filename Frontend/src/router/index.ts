@@ -3,17 +3,17 @@ import { RouteRecordRaw } from 'vue-router';
 import Administracion from '../views/Administracion.vue'
 import BuscarVehiculo from '../views/BuscarVehiculo.vue'
 import ModificacionBuscar from '../views/ModificacionBuscar.vue'
-import DatosVehiculos from '../views/DatosVehiculos.vue'
-import EliminarDatos from '../views/EliminarDatos.vue'
+import DatosVehiculo from '../views/DatosVehiculo.vue'
+import EliminarVehiculo from '../views/EliminarVehiculo.vue'
 import IngresoVehiculo from '../views/IngresoVehiculo.vue'
 import Login from '../views/Login.vue'
 import ModificacionDatos from '../views/ModificacionDatos.vue'
-import ModificacionDatosnuevo from '../views/ModificacionDatosnuevo.vue'
+import ModificacionResultado from '../views/ModificacionResultado.vue'
 import ModificarVehiculo from '../views/ModificarVehiculo.vue'
 import PaginaPrincipal from '../views/PaginaPrincipal.vue'
 import Resultado from '../views/Resultado.vue'
 import TabsPage from '../views/TabsPage.vue'
-import VerTodosLosVehiculos from '../views/VerTodos.vue'
+import VerTodos from '../views/VerTodos.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -21,64 +21,54 @@ const routes: Array<RouteRecordRaw> = [
     redirect: '/inicio'
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
+    path: '/admin/inicio',
+    name: 'Inicio de Administración',
     component: Administracion
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
+    path: '/buscar',
+    name: 'Búsqueda',
     component: BuscarVehiculo
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
+    path: '/admin/modificar/resultado',
+    name: 'Modificar - Resultado de búsqueda',
     component: ModificacionBuscar
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: DatosVehiculos
+    path: '/vehiculo',
+    name: 'Datos del vehículo',
+    component: DatosVehiculo
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: EliminarDatos
+    path: '/admin/eliminar',
+    name: 'Eliminación del vehículo',
+    component: EliminarVehiculo
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: IngresoNuevoVehiculo
+    path: '/admin/ingresar',
+    name: 'Ingreso de datos',
+    component: IngresoVehiculo
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
+    path: '/admin/login',
+    name: 'Iniciar sesión',
+    component: Login
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
+    path: '/admin/modificar',
+    name: 'Modificación de datos',
+    component: ModificacionDatos
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
+    path: '/admin/modificar/resultado2',
+    name: 'Modificar - Resultado de búsqueda',
+    component: ModificacionResultado
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
+    path: '/admin/modificar/buscar',
+    name: 'Modificar - Búsqueda',
+    component: ModificarVehiculo
   },
   {
     path: '/inicio',
@@ -86,60 +76,15 @@ const routes: Array<RouteRecordRaw> = [
     component: PaginaPrincipal
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
+    path: '/resultado',
+    name: 'Resultado de búsqueda',
+    component: Resultado
   },
   {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
-  {
-    path: '/inicio',
-    name: 'Página Principal',
-    component: PaginaPrincipal
-  },
+    path: '/todos',
+    name: 'Todos los Vehículos',
+    component: VerTodos
+  }
 ]
 
 const router = createRouter({
