@@ -1,97 +1,89 @@
 <template>
-    <div class="container">
-      <!-- Imagen centrada -->
-      <div class="image-container">
-        <img src="/Logo-App-Carro.png" alt="Descripción de la imagen" class="centered-image">
-      </div>
-      
+  <ion-page style="background-color: white;">
+    <ion-header>
+      <Toolbar value="Iniciar sesión"></Toolbar>
+    </ion-header>
+    <ion-content :fullscreen="true" class="ion-padding ion-text-center">
+      <!-- Imagen -->
+      <Logo></Logo>
       <!-- Cuadro de ingreso -->
-      <div class="login-box">
-        <h2>Iniciar sesión</h2>
-        <form>
-          <div class="form-group">
-            <label for="username">Usuario:</label>
-            <input type="text" id="username" name="username" class="input-field" required>
-          </div>
-          <div class="form-group">
-            <label for="password">Contraseña:</label>
-            <input type="password" id="password" name="password" class="input-field" required>
-          </div>
-          <button type="submit" class="login-button">Ingresar</button>
-        </form>
-      </div>
-    </div>
-  </template>
-  
-  <style scoped>
-  /* Contenedor principal */
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Toma toda la altura de la pantalla */
+      <Input v-model="usuario" id="usuario" name="usuario" label="Usuario:"></Input>
+      <Input v-model="contrasenia" type="password" id="contrasenia" name="contrasenia" label="Contraseña:"></Input>
+      <!-- Botón para ingresar (No funcional) -->
+      <Button href="./admin/inicio" value="Ingresar"></Button>
+      <Button @click="login" value="Ingresar F"></Button>
+    </ion-content>
+  </ion-page>
+</template>
+
+<script setup lang="ts">
+import { IonHeader, IonContent, IonPage } from '@ionic/vue';
+import Button from '@/components/Button.vue';
+import Toolbar from '@/components/Toolbar.vue';
+import Logo from '@/components/Logo.vue';
+import Input from '@/components/Input.vue';
+import { onMounted, ref } from 'vue';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+
+const baseURL = 'http://localhost:8080/smartcar/administrador';
+
+const items = ref<Array<ItemType>>([]);
+const id = ref('');
+const usuario = ref('');
+const contrasenia = ref('');
+
+// Tipos
+interface ItemType {
+  id: string;
+  usuario: string;
+  contrasenia: string;
+}
+
+onMounted(() => {
+  findAllRecords();
+});
+
+// Obtener todos los registros
+async function findAllRecords() {
+  try {
+    const response = await axios.get(baseURL);
+    items.value = response.data;
+    return response.data;
+  } catch (error) {
+    console.error('Error al obtener todos los registros:', error);
+    throw error;
   }
-  
-  /* Estilos para la imagen */
-  .image-container {
-    text-align: center; /* Centrado horizontal */
-  }
-  
-  .centered-image {
-    max-width: 100%;
-    max-height: 200px;
-  }
-  
-  /* Estilos para el cuadro de ingreso */
-  .login-box {
-    max-width: 400px;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .login-box h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
-  }
-  
-  .form-group {
-    margin-bottom: 20px;
-  }
-  
-  .label {
-    font-weight: bold;
-  }
-  
-  .input-field {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .login-button {
-    width: 100%;
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .login-button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Estilos para dispositivos pequeños */
-  @media screen and (max-width: 600px) {
-    .login-box {
-      max-width: 300px;
-      padding: 30px;
+}
+
+async function acceder() {
+  const data = {
+    usuario: usuario.value,
+    contrasenia: contrasenia.value
+  };
+
+  try {
+    permiso = false;
+    items.forEach(element => {
+      if ((element.usuario == data.usuario) && (element.contrasenia == data.contrasenia)) {
+        permiso = true;
+      }
+    });
+    if(permiso){
+      window.location.href = "./admin/inicio";
+    }else{
+      Swal.fire({
+        title: 'Acceso denegado',
+        text: 'Revise los datos ingresados.',
+        icon: 'warning',
+        confirmButtonText: 'Aceptar'
+      });
     }
+  } catch (error) {
+    console.error("Error en la autenticación", error);
   }
-  </style>
-  
+ const login=()=>{
+  acceder();
+ }
+}
+</script>

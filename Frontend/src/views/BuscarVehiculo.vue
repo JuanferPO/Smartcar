@@ -144,11 +144,4 @@
   button.guardar-button:hover {
     background-color: #0056b3;
   }
-  </style>
-  
-  
-  <style scoped>
-  /* Estilos CSS */
-  </style>
-  
-  
+  </style>  

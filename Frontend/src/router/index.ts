@@ -12,7 +12,6 @@ import ModificacionResultado from '../views/ModificacionResultado.vue'
 import ModificarVehiculo from '../views/ModificarVehiculo.vue'
 import PaginaPrincipal from '../views/PaginaPrincipal.vue'
 import Resultado from '../views/Resultado.vue'
-import TabsPage from '../views/TabsPage.vue'
 import VerTodos from '../views/VerTodos.vue'
 
 const routes: Array<RouteRecordRaw> = [

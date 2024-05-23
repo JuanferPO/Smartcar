@@ -1,5 +1,5 @@
 <template>
-  <ion-button v-bind="$attrs" :id="id" :expand="expand" :color="color" :size="size" :fill="fill" :shape="shape" :disabled="disabled" :type="type" :href="href" @click="handleClick">{{ value }}</ion-button>
+  <ion-button style="margin-bottom: 20px;" v-bind="$attrs" :id="id" :expand="expand" :color="color" :size="size" :fill="fill" :shape="shape" :disabled="disabled" :type="type" :href="href" @click="handleClick">{{ value }}</ion-button>
 </template>
 
 <script setup lang="ts">
