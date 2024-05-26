@@ -53,9 +53,9 @@ public class Vehiculo {
     @Column(name = "imagen")
     private File imagen;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "administrador_registro_id")
-    private Administrador administradorRegistroID; //Guarda null
+    private Administrador administradorRegistroID;
 
     public Long getId() {
         return id;

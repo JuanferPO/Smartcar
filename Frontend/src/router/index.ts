@@ -5,7 +5,7 @@ import BuscarVehiculo from '../views/BuscarVehiculo.vue'
 import ModificacionBuscar from '../views/ModificacionBuscar.vue'
 import DatosVehiculo from '../views/DatosVehiculo.vue'
 import EliminarVehiculo from '../views/EliminarVehiculo.vue'
-import IngresoVehiculo from '../views/IngresoVehiculo.vue'
+import AgregarVehiculo from '../views/AgregarVehiculo.vue'
 import Login from '../views/Login.vue'
 import ModificacionDatos from '../views/ModificacionDatos.vue'
 import ModificacionResultado from '../views/ModificacionResultado.vue'
@@ -18,6 +18,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     redirect: '/inicio'
+  },
+  {
+    path: '/admin',
+    redirect: '/admin/login'
   },
   {
     path: '/admin/inicio',
@@ -45,9 +49,9 @@ const routes: Array<RouteRecordRaw> = [
     component: EliminarVehiculo
   },
   {
-    path: '/admin/ingresar',
-    name: 'Ingreso de datos',
-    component: IngresoVehiculo
+    path: '/admin/agregar',
+    name: 'Agregar Vehículo',
+    component: AgregarVehiculo
   },
   {
     path: '/admin/login',

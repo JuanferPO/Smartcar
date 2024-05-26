@@ -2,8 +2,8 @@
   <ion-header>
     <ion-toolbar>
       <ion-title class="ion-text-center">{{ value }}</ion-title>
-      <ion-buttons v-if="atras" slot="start">
-        <ion-button :href="refAtras">
+      <ion-buttons slot="start">
+        <ion-button @click="accion">
           <ion-icon :icon="IonIcons.arrowBack"></ion-icon>
         </ion-button>
       </ion-buttons>
@@ -16,5 +16,5 @@ import { IonButton, IonTitle, IonButtons, IonToolbar, IonHeader, IonContent, Ion
 import * as IonIcons from 'ionicons/icons';
 import { defineProps } from 'vue';
 
-const props = defineProps(['value', 'atras', 'refAtras']);
+const props = defineProps(['value', 'accion']);
 </script>

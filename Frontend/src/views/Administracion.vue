@@ -1,13 +1,11 @@
 <template>
   <ion-page style="background-color: white;">
-    <ion-header>
-      <Toolbar value="Inicio de Administración"></Toolbar>
-    </ion-header>
+    <Toolbar value="Inicio de Administración"></Toolbar>
     <ion-content :fullscreen="true" class="ion-padding ion-text-center">
       <!-- Imagen -->
       <Logo></Logo>
       <!-- Botones -->
-      <Button href="./admin/ingresar" value="Agregar Vehículo"></Button>
+      <Button href="./admin/agregar" value="Agregar Vehículo"></Button>
       <Button href="./admin/modificar/buscar" value="Modificar Datos"></Button>
     </ion-content>
   </ion-page>
