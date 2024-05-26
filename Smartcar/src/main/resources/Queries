@@ -20,7 +20,7 @@ Vehiculo: http://localhost:8080/smartcar/vehiculo
     "precio": 23000000,
     "kilometraje": 2530.4,
     "imagen":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAA1JREFUGFdj+P///38ACfsD/QVDRcoAAAAASUVORK5CYII=",
-    "administradorRegistro":
+    "administradorRegistroID":
     {
         "id": 1
     }

@@ -6,7 +6,7 @@
       <Logo></Logo>
       <!-- Botones -->
       <Button href="./admin/agregar" value="Agregar Vehículo"></Button>
-      <Button href="./admin/modificar/buscar" value="Modificar Datos"></Button>
+      <Button href="./admin/modificar" value="Modificar Datos"></Button>
     </ion-content>
   </ion-page>
 </template>

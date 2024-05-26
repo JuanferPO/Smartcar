@@ -3,7 +3,7 @@
     <Toolbar value="Agregar Vehículo" atras="true" refAtras="./admin/inicio"></Toolbar>
     <ion-content :fullscreen="true" class="ion-padding ion-text-center">
       <!-- Campos -->
-      <VehiculoInput></VehiculoInput>
+      <VehiculoInput :vehiculo="vehiculo"></VehiculoInput>
       <Button id="created" value="Agregar" nameMethod="createRecord" @click="createRecord"></Button>
     </ion-content>
   </ion-page>
@@ -22,6 +22,7 @@ const baseURLVehiculo = 'http://localhost:8080/smartcar/vehiculo';
 const baseURLAdmin = 'http://localhost:8080/smartcar/administrador';
 
 const items = ref<Array<ItemTypeAdmin>>([]);
+const vehiculo = ref('')
 
 let admins: Array<ItemTypeAdmin>;
 let administradorRegistroID: String;
@@ -42,6 +43,7 @@ async function findAdminReg() {
     // Obtener todos los registros
     const response = await axios.get(baseURLAdmin);
     items.value = response.data;
+
     // Obtener id de referencia
     getAdminReg();
   } catch (error) {

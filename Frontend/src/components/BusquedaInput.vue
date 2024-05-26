@@ -21,7 +21,7 @@
                 <ion-label>
                     Condición:
                 </ion-label>
-                    <ion-radio-group v-model="condicion" id="condicion" name="condicion">
+                    <ion-radio-group v-model="condicion" id="condicion" name="condicion" allow-empty-selection="true">
                         <ion-radio value="Nuevo" label-placement="end">Nuevo</ion-radio>
                         <ion-radio value="Usado" label-placement="end">Usado</ion-radio>
                     </ion-radio-group>
@@ -30,7 +30,7 @@
                 <ion-label>
                     Transmisión:
                 </ion-label>
-                    <ion-radio-group v-model="transmision" id="transmision" name="transmision">
+                    <ion-radio-group v-model="transmision" id="transmision" name="transmision" allow-empty-selection="true">
                         <ion-radio value="Manual" label-placement="end">Manual</ion-radio>
                         <ion-radio value="Automática" label-placement="end">Automática</ion-radio>
                     </ion-radio-group>
@@ -89,7 +89,7 @@ const marca = ref('');
 const modelo = ref('');
 const ubicacion = ref('');
 const anio = ref('');
-const condicion = ref('');
+const condicion = ref('Usado');
 const transmision = ref('');
 const tipo = ref('');
 const combustible = ref('');

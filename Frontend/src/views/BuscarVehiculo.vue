@@ -120,7 +120,7 @@ async function fetchRecordById(recordId: string) {
   openModal2Add();
   vehiculos.forEach(element => {
     if (element.id == recordId){
-      vehiculoData=element
+      vehiculoData=element;
     }})
     
 }
