@@ -51,7 +51,7 @@ public class Vehiculo {
     private BigDecimal kilometraje;
 
     @Column(name = "imagen")
-    private File imagen;
+    private String imagen;
 
     @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "administrador_registro_id")
@@ -169,11 +169,11 @@ public class Vehiculo {
         this.kilometraje = kilometraje;
     }
 
-    public File getImagen() {
+    public String getImagen() {
         return imagen;
     }
 
-    public void setImagen(File imagen) {
+    public void setImagen(String imagen) {
         this.imagen = imagen;
     }
 

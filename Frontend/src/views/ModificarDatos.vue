@@ -1,6 +1,6 @@
 <template>
     <ion-page style="background-color: white;">
-        <Toolbar value="Búsqueda" atras="true" refAtras="./admin/inicio"></Toolbar>
+        <Toolbar value="Búsqueda para modificar datos" atras="true" refAtras="./admin/inicio"></Toolbar>
         <ion-content :fullscreen="true" class="ion-padding ion-text-center">
             <ion-modal :is-open="modal1IsOpen" @didDismiss="modal1IsOpen = false" :css-class="['my-custom-modal']">
                 <ModalToolbar value="Resultados de búsqueda" @click="closeModal1"></ModalToolbar>
